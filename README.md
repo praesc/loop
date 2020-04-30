@@ -45,7 +45,17 @@ The current version of the code requires CUDA support for training. Generation c
 ```bash
 git clone https://github.com/facebookresearch/loop.git
 cd loop
+bash scripts/download_dependencies.sh
+
+python3 -m venv be3
+source be3/bin/activate
+pip install -r scripts/requirements3.txt
+deactivate
+
+python3 -m venv be
+source be/bin/activate
 pip install -r scripts/requirements.txt
+deactivate
 ```
 
 ### Data
