@@ -12,9 +12,9 @@ from torch.nn.utils.rnn import pack_padded_sequence as pack
 
 
 def getLinear(dim_in, dim_out):
-    return nn.Sequential(nn.Linear(dim_in, dim_in/10),
+    return nn.Sequential(nn.Linear(dim_in, int(dim_in/10)),
                          nn.ReLU(),
-                         nn.Linear(dim_in/10, dim_out))
+                         nn.Linear(int(dim_in)/10, dim_out))
 
 
 class MaskedMSE(nn.Module):

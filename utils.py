@@ -134,7 +134,7 @@ def load_binary_file_frame(file_name, dimension):
     features = numpy.fromfile(fid_lab, dtype=numpy.float32)
     fid_lab.close()
     assert features.size % float(dimension) == 0.0,'specified dimension %s not compatible with data'%(dimension)
-    frame_number = features.size / dimension
+    frame_number = int(features.size / dimension)
     features = features[:(dimension * frame_number)]
     features = features.reshape((-1, dimension))
     return features, frame_number
