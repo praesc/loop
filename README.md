@@ -52,7 +52,7 @@ source be3/bin/activate
 pip install -r scripts/requirements3.txt
 deactivate
 
-python3 -m venv be
+virtualenv -p /usr/bin/python2.7 be
 source be/bin/activate
 pip install -r scripts/requirements.txt
 deactivate
@@ -137,6 +137,13 @@ python train.py --expName vctk --data data/vctk --noise 4 --seq-len 100 --epochs
 Then, continue training the model using noise level of 2, on full sequences:
 ```bash
 python train.py --expName vctk_noise_2 --data data/vctk --checkpoint checkpoints/vctk/bestmodel.pth --noise 2 --seq-len 1000 --epochs 90
+```
+
+## Generate dataset from text
+Edit the phrases you would like to generate in scripts/gen_npz.py
+Then, execute the automated script:
+```bash
+bash scripts/generate_dset.sh
 ```
 
 ## Citation
