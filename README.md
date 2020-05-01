@@ -54,7 +54,7 @@ deactivate
 
 virtualenv -p /usr/bin/python2.7 be
 source be/bin/activate
-pip install -r scripts/requirements.txt
+pip install -r scripts/requirements2.txt
 deactivate
 ```
 
